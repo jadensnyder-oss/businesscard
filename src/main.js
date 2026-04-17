@@ -60,6 +60,33 @@ const CLIENT_ASSETS = {
   "five-guys": {
     screenshotHtml: `<img src="/assets/five-guys/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
   },
+  "subway": {
+    screenshotHtml: `<img src="/assets/subway/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "little-caesars": {
+    screenshotHtml: `<img src="/assets/little-caesars/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "whataburger": {
+    screenshotHtml: `<img src="/assets/whataburger/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "nothing-bundt-cakes": {
+    screenshotHtml: `<img src="/assets/nothing-bundt-cakes/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "white-castle": {
+    screenshotHtml: `<img src="/assets/white-castle/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "dutch-bros": {
+    screenshotHtml: `<img src="/assets/dutch-bros/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "el-pollo-loco": {
+    screenshotHtml: `<img src="/assets/el-pollo-loco/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "freddys": {
+    screenshotHtml: `<img src="/assets/freddys/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "shake-shack": {
+    screenshotHtml: `<img src="/assets/shake-shack/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
 };
 
 // === CONFIG ===
@@ -68,28 +95,28 @@ const CLIENTS = {
   "inspire-brands":       { displayName: "Inspire Brands",        searchTerms: ["inspire", "inspire brands"],                   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E31837", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "panda-restaurant":     { displayName: "Panda Restaurant Group", searchTerms: ["panda restaurant"],                             hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E40022", brandFont: "Montserrat, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panda-restaurant"].screenshotHtml, confirmationBg: "#D4202A" } },
   "panda-express":        { displayName: "Panda Express",           searchTerms: ["panda", "panda express"],                       hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E40022", brandFont: "Montserrat, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panda-restaurant"].screenshotHtml, confirmationBg: "#D4202A" } },
-  "shake-shack":          { displayName: "Shake Shack",            searchTerms: ["shake shack", "shakeshack"],                   hasCustomDemo: true, annualTransactions: 50000000, confirmationPage: { brandColor: "#52B043", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "shake-shack":          { displayName: "Shake Shack",            searchTerms: ["shake shack", "shakeshack"],                   hasCustomDemo: true, annualTransactions: 50000000, confirmationPage: { brandColor: "#408116", brandFont: "'Barlow Semi Condensed', 'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["shake-shack"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "smoothie-king":        { displayName: "Smoothie King",          searchTerms: ["smoothie king", "smoothie"],                  hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#B5121B", brandFont: "'Roboto Condensed', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["smoothie-king"].screenshotHtml } },
-  "subway":               { displayName: "SUBWAY",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#009B48", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "subway":               { displayName: "SUBWAY",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#008C2B", brandFont: "'Roboto', 'Barlow Condensed', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["subway"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "scooters-coffee":      { displayName: "Scooter's Coffee",       searchTerms: ["scooter", "scooters", "scooter's coffee"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F7941D", brandFont: "Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["scooters-coffee"].screenshotHtml } },
   "panera-bread":         { displayName: "Panera Bread",           searchTerms: ["panera", "panera bread"],                     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#1D4321", brandFont: "Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panera-bread"].screenshotHtml } },
-  "el-pollo-loco":        { displayName: "El Pollo Loco",          searchTerms: ["el pollo", "el pollo loco", "pollo loco"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F7A200", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "el-pollo-loco":        { displayName: "El Pollo Loco",          searchTerms: ["el pollo", "el pollo loco", "pollo loco"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E1280F", brandFont: "'Roboto', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["el-pollo-loco"].screenshotHtml, confirmationBg: "#E7E7DF" } },
   "jersey-mikes":         { displayName: "Jersey Mike's",          searchTerms: ["jersey mike", "jersey mike's", "jersey mikes"],hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#EE000C", brandFont: "Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["jersey-mikes"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "churchs-chicken":      { displayName: "Church's Texas Chicken", searchTerms: ["church", "church's", "churchs", "texas chicken"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#FFBB00", brandFont: "Montserrat, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["churchs-chicken"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "daves-hot-chicken":    { displayName: "Dave's Hot Chicken",     searchTerms: ["dave", "dave's hot chicken", "daves hot chicken"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F5D60A", brandFont: "Barlow, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["daves-hot-chicken"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "del-taco":             { displayName: "Del Taco",               searchTerms: ["del taco"],                                    hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#147D46", brandFont: "'Barlow Condensed', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["del-taco"].screenshotHtml, confirmationBg: "#FFFFFF" } },
-  "dutch-bros":           { displayName: "Dutch Bros",             searchTerms: ["dutch bros", "dutch brothers"],               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#004B93", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "dutch-bros":           { displayName: "Dutch Bros",             searchTerms: ["dutch bros", "dutch brothers"],               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#006098", brandFont: "'Nunito Sans', Futura, 'Trebuchet MS', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["dutch-bros"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "five-guys":            { displayName: "Five Guys",              searchTerms: ["five guys", "five guys burgers", "5 guys"],   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#C81633", brandFont: "'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["five-guys"].screenshotHtml, confirmationBg: "#FFFFFF" } },
-  "freddys":              { displayName: "Freddy's",               searchTerms: ["freddy", "freddy's", "freddys"],              hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#003087", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "freddys":              { displayName: "Freddy's",               searchTerms: ["freddy", "freddy's", "freddys"],              hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D11839", brandFont: "'Montserrat', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["freddys"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "dairy-queen":          { displayName: "Dairy Queen",            searchTerms: ["dairy queen", "dq"],                          hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#CC0000", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "krispy-krunchy":       { displayName: "Krispy Krunchy",         searchTerms: ["krispy krunchy", "krispy"],                   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D92632", brandFont: "Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["krispy-krunchy"].screenshotHtml, confirmationBg: "#FFFFFF" } },
-  "little-caesars":       { displayName: "Little Caesars",         searchTerms: ["little caesars", "little caesar"],            hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#0033A0", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "little-caesars":       { displayName: "Little Caesars",         searchTerms: ["little caesars", "little caesar"],            hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F25C12", brandFont: "'Barlow Semi Condensed', 'Open Sans', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["little-caesars"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "marcos-pizza":         { displayName: "Marco's Pizza",          searchTerms: ["marco", "marco's", "marcos pizza"],           hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#FBAE17", brandFont: "Futura, 'Trebuchet MS', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["marcos-pizza"].screenshotHtml, confirmationBg: "#F5F0EB" } },
-  "whataburger":          { displayName: "Whataburger",            searchTerms: ["whataburger", "whata"],                       hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F3581D", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "whataburger":          { displayName: "Whataburger",            searchTerms: ["whataburger", "whata"],                       hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F17315", brandFont: "'Roboto Slab', 'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["whataburger"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "zaxbys":               { displayName: "Zaxby's",               searchTerms: ["zaxby", "zaxby's", "zaxbys"],                 hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E40022", brandFont: "Montserrat, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["zaxbys"].screenshotHtml, confirmationBg: "#1B2A4A" } },
   "brinker":              { displayName: "Brinker International",  searchTerms: ["brinker", "chilis", "chili's", "maggiano"],   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#C8102E", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "nothing-bundt-cakes":  { displayName: "Nothing Bundt Cakes",    searchTerms: ["nothing bundt", "bundt cakes", "nothing bundt cakes"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#9C3E97", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "white-castle":         { displayName: "White Castle",           searchTerms: ["white castle"],                               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#1460A8", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "nothing-bundt-cakes":  { displayName: "Nothing Bundt Cakes",    searchTerms: ["nothing bundt", "bundt cakes", "nothing bundt cakes"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#1C418E", brandFont: "'Montserrat', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["nothing-bundt-cakes"].screenshotHtml, confirmationBg: "#FFFFFF" } },
+  "white-castle":         { displayName: "White Castle",           searchTerms: ["white castle"],                               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#0063AF", brandFont: "'Roboto', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["white-castle"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "_default": {
     displayName: "Your Brand",
     searchTerms: [],
@@ -581,6 +608,24 @@ function renderSheet() {
 
   const isSk = state.selectedClientKey === 'smoothie-king';
   backdrop.classList.toggle('sk-figma-backdrop', isSk);
+  const isSubway = state.selectedClientKey === 'subway';
+  backdrop.classList.toggle('sw-figma-backdrop', isSubway);
+  const isLittleCaesars = state.selectedClientKey === 'little-caesars';
+  backdrop.classList.toggle('lc-figma-backdrop', isLittleCaesars);
+  const isWhataburger = state.selectedClientKey === 'whataburger';
+  backdrop.classList.toggle('wb-figma-backdrop', isWhataburger);
+  const isNothingBundtCakes = state.selectedClientKey === 'nothing-bundt-cakes';
+  backdrop.classList.toggle('nbc-figma-backdrop', isNothingBundtCakes);
+  const isWhiteCastle = state.selectedClientKey === 'white-castle';
+  backdrop.classList.toggle('wc-figma-backdrop', isWhiteCastle);
+  const isDutchBros = state.selectedClientKey === 'dutch-bros';
+  backdrop.classList.toggle('db-figma-backdrop', isDutchBros);
+  const isElPolloLoco = state.selectedClientKey === 'el-pollo-loco';
+  backdrop.classList.toggle('epl-figma-backdrop', isElPolloLoco);
+  const isFreddys = state.selectedClientKey === 'freddys';
+  backdrop.classList.toggle('frd-figma-backdrop', isFreddys);
+  const isShakeShack = state.selectedClientKey === 'shake-shack';
+  backdrop.classList.toggle('shk-figma-backdrop', isShakeShack);
 
   if (isSk) {
     sheet.classList.add('sk-figma');
@@ -991,6 +1036,351 @@ function renderSheet() {
     return;
   }
 
+  if (isSubway) {
+    sheet.classList.add('sw-figma');
+    const swDismissBtn = offer.dismiss
+      ? `<button type="button" class="sw-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="sw-sheet">
+      <div class="sw-sheet__body">
+        <div class="sw-sheet__header-row">
+          <div class="sw-sheet__titles">
+            <div class="sw-sheet__thankyou">Thank You for Your Order!</div>
+            <div class="sw-sheet__order-line">Order #057689917</div>
+          </div>
+          <button type="button" class="sw-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="sw-sheet__card">
+          <div class="sw-sheet__card-inner">
+            <div class="sw-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="sw-sheet__btns">
+              <button type="button" class="sw-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${swDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="sw-sheet__footer">
+        <span class="sw-sheet__footer-muted">Powered by </span><a class="sw-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="sw-sheet__footer-muted"> - </span><a class="sw-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isLittleCaesars) {
+    sheet.classList.add('lc-figma');
+    const lcDismissBtn = offer.dismiss
+      ? `<button type="button" class="lc-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="lc-sheet">
+      <div class="lc-sheet__body">
+        <div class="lc-sheet__header-row">
+          <div class="lc-sheet__titles">
+            <div class="lc-sheet__thankyou">Thank You For Your Order!</div>
+            <div class="lc-sheet__order-line">Order #057689917</div>
+          </div>
+          <button type="button" class="lc-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="lc-sheet__card">
+          <div class="lc-sheet__card-inner">
+            <div class="lc-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="lc-sheet__btns">
+              <button type="button" class="lc-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${lcDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="lc-sheet__footer">
+        <span class="lc-sheet__footer-muted">Powered by </span><a class="lc-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="lc-sheet__footer-muted"> - </span><a class="lc-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isWhataburger) {
+    sheet.classList.add('wb-figma');
+    const wbDismissBtn = offer.dismiss
+      ? `<button type="button" class="wb-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="wb-sheet">
+      <div class="wb-sheet__body">
+        <div class="wb-sheet__header-row">
+          <div class="wb-sheet__titles">
+            <div class="wb-sheet__thankyou">Thank You For Your Order!</div>
+            <div class="wb-sheet__order-line">Order #057689917</div>
+          </div>
+          <button type="button" class="wb-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="wb-sheet__card">
+          <div class="wb-sheet__card-inner">
+            <div class="wb-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="wb-sheet__btns">
+              <button type="button" class="wb-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${wbDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="wb-sheet__footer">
+        <span class="wb-sheet__footer-muted">Powered by </span><a class="wb-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="wb-sheet__footer-muted"> - </span><a class="wb-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isNothingBundtCakes) {
+    sheet.classList.add('nbc-figma');
+    const nbcDismissBtn = offer.dismiss
+      ? `<button type="button" class="nbc-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="nbc-sheet">
+      <div class="nbc-sheet__body">
+        <div class="nbc-sheet__header-row">
+          <div class="nbc-sheet__titles">
+            <div class="nbc-sheet__thankyou">Thanks For Your Order!</div>
+            <div class="nbc-sheet__order-line">Order #057689917</div>
+          </div>
+          <button type="button" class="nbc-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="nbc-sheet__card">
+          <div class="nbc-sheet__card-inner">
+            <div class="nbc-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="nbc-sheet__btns">
+              <button type="button" class="nbc-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${nbcDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="nbc-sheet__footer">
+        <span class="nbc-sheet__footer-muted">Powered by </span><a class="nbc-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="nbc-sheet__footer-muted"> - </span><a class="nbc-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isWhiteCastle) {
+    sheet.classList.add('wc-figma');
+    const wcDismissBtn = offer.dismiss
+      ? `<button type="button" class="wc-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="wc-sheet">
+      <div class="wc-sheet__body">
+        <div class="wc-sheet__header-row">
+          <div class="wc-sheet__header-spacer" aria-hidden="true"></div>
+          <div class="wc-sheet__titles">
+            <div class="wc-sheet__thankyou">Thanks For Your Order!</div>
+            <div class="wc-sheet__order-line">Order #4297538</div>
+          </div>
+          <button type="button" class="wc-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="wc-sheet__card">
+          <div class="wc-sheet__card-inner">
+            <div class="wc-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="wc-sheet__btns">
+              <button type="button" class="wc-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${wcDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="wc-sheet__footer">
+        <span class="wc-sheet__footer-muted">Powered by </span><a class="wc-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="wc-sheet__footer-muted"> - </span><a class="wc-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isDutchBros) {
+    sheet.classList.add('db-figma');
+    const dbDismissBtn = offer.dismiss
+      ? `<button type="button" class="db-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="db-sheet">
+      <div class="db-sheet__body">
+        <div class="db-sheet__header-row">
+          <div class="db-sheet__header-spacer" aria-hidden="true"></div>
+          <div class="db-sheet__titles">
+            <div class="db-sheet__headline">Your Order is Confirmed</div>
+            <div class="db-sheet__order-line">Order #4297538</div>
+          </div>
+          <button type="button" class="db-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="db-sheet__card">
+          <div class="db-sheet__card-inner">
+            <div class="db-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="db-sheet__btns">
+              <button type="button" class="db-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${dbDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="db-sheet__footer">
+        <span class="db-sheet__footer-muted">Powered by </span><a class="db-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="db-sheet__footer-muted"> - </span><a class="db-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isElPolloLoco) {
+    sheet.classList.add('epl-figma');
+    const eplDismissBtn = offer.dismiss
+      ? `<button type="button" class="epl-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="epl-sheet">
+      <div class="epl-sheet__body">
+        <div class="epl-sheet__header-row">
+          <div class="epl-sheet__header-spacer" aria-hidden="true"></div>
+          <div class="epl-sheet__titles">
+            <div class="epl-sheet__headline">Thanks for your order!</div>
+            <div class="epl-sheet__order-line">Order #4297538</div>
+          </div>
+          <button type="button" class="epl-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="epl-sheet__card">
+          <div class="epl-sheet__card-inner">
+            <div class="epl-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="epl-sheet__btns">
+              <button type="button" class="epl-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${eplDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="epl-sheet__footer">
+        <span class="epl-sheet__footer-muted">Powered by </span><a class="epl-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="epl-sheet__footer-muted"> - </span><a class="epl-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isFreddys) {
+    sheet.classList.add('frd-figma');
+    const frdDismissBtn = offer.dismiss
+      ? `<button type="button" class="frd-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="frd-sheet">
+      <div class="frd-sheet__body">
+        <div class="frd-sheet__header-row">
+          <div class="frd-sheet__titles">
+            <div class="frd-sheet__order-line">Order #4297538</div>
+            <div class="frd-sheet__headline">Order confirmed!</div>
+          </div>
+          <button type="button" class="frd-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="frd-sheet__card">
+          <div class="frd-sheet__card-inner">
+            <div class="frd-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="frd-sheet__btns">
+              <button type="button" class="frd-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${frdDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="frd-sheet__footer">
+        <span class="frd-sheet__footer-muted">Powered by </span><a class="frd-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="frd-sheet__footer-muted"> - </span><a class="frd-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
+  if (isShakeShack) {
+    sheet.classList.add('shk-figma');
+    const shkDismissBtn = offer.dismiss
+      ? `<button type="button" class="shk-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="shk-sheet">
+      <div class="shk-sheet__body">
+        <div class="shk-sheet__header-row">
+          <div class="shk-sheet__titles">
+            <div class="shk-sheet__headline">Thank You for Your Order!</div>
+            <div class="shk-sheet__order-line">Order #057689917</div>
+          </div>
+          <button type="button" class="shk-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="shk-sheet__card">
+          <div class="shk-sheet__card-inner">
+            <div class="shk-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="shk-sheet__btns">
+              <button type="button" class="shk-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${shkDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="shk-sheet__footer">
+        <span class="shk-sheet__footer-muted">Powered by </span><a class="shk-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="shk-sheet__footer-muted"> - </span><a class="shk-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
   backdrop.classList.remove('sk-figma-backdrop');
   backdrop.classList.remove('sc-figma-backdrop');
   backdrop.classList.remove('pb-figma-backdrop');
@@ -1003,6 +1393,15 @@ function renderSheet() {
   backdrop.classList.remove('mp-figma-backdrop');
   backdrop.classList.remove('kk-figma-backdrop');
   backdrop.classList.remove('fg-figma-backdrop');
+  backdrop.classList.remove('sw-figma-backdrop');
+  backdrop.classList.remove('lc-figma-backdrop');
+  backdrop.classList.remove('wb-figma-backdrop');
+  backdrop.classList.remove('nbc-figma-backdrop');
+  backdrop.classList.remove('wc-figma-backdrop');
+  backdrop.classList.remove('db-figma-backdrop');
+  backdrop.classList.remove('epl-figma-backdrop');
+  backdrop.classList.remove('frd-figma-backdrop');
+  backdrop.classList.remove('shk-figma-backdrop');
   sheet.classList.remove('sk-figma');
   sheet.classList.remove('sc-figma');
   sheet.classList.remove('pb-figma');
@@ -1015,6 +1414,15 @@ function renderSheet() {
   sheet.classList.remove('mp-figma');
   sheet.classList.remove('kk-figma');
   sheet.classList.remove('fg-figma');
+  sheet.classList.remove('sw-figma');
+  sheet.classList.remove('lc-figma');
+  sheet.classList.remove('wb-figma');
+  sheet.classList.remove('nbc-figma');
+  sheet.classList.remove('wc-figma');
+  sheet.classList.remove('db-figma');
+  sheet.classList.remove('epl-figma');
+  sheet.classList.remove('frd-figma');
+  sheet.classList.remove('shk-figma');
 
   // All interpolated values are from static DEMO_OFFERS config — not user input.
   sheet.innerHTML = `

@@ -1181,6 +1181,10 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+/* KFC mark reads a bit small vs neighbors — ease inset slightly */
+.logo-tile--kfc .logo-tile-media {
+  padding: 7%;
+}
 
 .contact-section  { width: 100%; text-align: center; margin-bottom: 28px; }
 .contact-headline {
@@ -1382,6 +1386,33 @@ const CLIENT_ASSETS = {
   "smoothie-king": {
     screenshotHtml: `<img src="assets/smoothie-king/confirmation.png?v=sk-confirm-20260413" alt="" class="s4-phone-screenshot" width="473" height="1024" decoding="sync" fetchpriority="high">`,
   },
+  "subway": {
+    screenshotHtml: `<img src="assets/subway/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "little-caesars": {
+    screenshotHtml: `<img src="assets/little-caesars/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "whataburger": {
+    screenshotHtml: `<img src="assets/whataburger/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "nothing-bundt-cakes": {
+    screenshotHtml: `<img src="assets/nothing-bundt-cakes/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "white-castle": {
+    screenshotHtml: `<img src="assets/white-castle/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "dutch-bros": {
+    screenshotHtml: `<img src="assets/dutch-bros/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "el-pollo-loco": {
+    screenshotHtml: `<img src="assets/el-pollo-loco/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "freddys": {
+    screenshotHtml: `<img src="assets/freddys/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
+  "shake-shack": {
+    screenshotHtml: `<img src="assets/shake-shack/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
 };
 
 // === CONFIG ===
@@ -1389,27 +1420,27 @@ const CLIENTS = {
   "bloomin-brands":       { displayName: "Bloomin' Brands",       searchTerms: ["bloomin", "bloomin brands", "bloomin' brands"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#C8102E", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "inspire-brands":       { displayName: "Inspire Brands",        searchTerms: ["inspire", "inspire brands"],                   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E31837", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "panda-restaurant":     { displayName: "Panda Restaurant Group", searchTerms: ["panda", "panda restaurant", "panda express"],  hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D4202A", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "shake-shack":          { displayName: "Shake Shack",            searchTerms: ["shake shack", "shakeshack"],                   hasCustomDemo: true, annualTransactions: 50000000, confirmationPage: { brandColor: "#52B043", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "shake-shack":          { displayName: "Shake Shack",            searchTerms: ["shake shack", "shakeshack"],                   hasCustomDemo: true, annualTransactions: 50000000, confirmationPage: { brandColor: "#408116", brandFont: "'Barlow Semi Condensed', 'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["shake-shack"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "smoothie-king":        { displayName: "Smoothie King",          searchTerms: ["smoothie king", "smoothie"],                  hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#B5121B", brandFont: "'Roboto Condensed', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["smoothie-king"].screenshotHtml } },
-  "subway":               { displayName: "SUBWAY",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#009B48", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "subway":               { displayName: "SUBWAY",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#008C2B", brandFont: "'Roboto', 'Barlow Condensed', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["subway"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "scooters-coffee":      { displayName: "Scooter's Coffee",       searchTerms: ["scooter", "scooters", "scooter's coffee"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F7941D", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "el-pollo-loco":        { displayName: "El Pollo Loco",          searchTerms: ["el pollo", "el pollo loco", "pollo loco"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F7A200", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "el-pollo-loco":        { displayName: "El Pollo Loco",          searchTerms: ["el pollo", "el pollo loco", "pollo loco"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E1280F", brandFont: "'Roboto', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["el-pollo-loco"].screenshotHtml, confirmationBg: "#E7E7DF" } },
   "jersey-mikes":         { displayName: "Jersey Mike's",          searchTerms: ["jersey mike", "jersey mike's", "jersey mikes"],hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#CC0000", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "churchs-chicken":      { displayName: "Church's Texas Chicken", searchTerms: ["church", "church's", "churchs", "texas chicken"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E2211C", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "daves-hot-chicken":    { displayName: "Dave's Hot Chicken",     searchTerms: ["dave", "dave's hot chicken", "daves hot chicken"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E31837", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "del-taco":             { displayName: "Del Taco",               searchTerms: ["del taco"],                                    hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#DA1F24", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "dutch-bros":           { displayName: "Dutch Bros",             searchTerms: ["dutch bros", "dutch brothers"],               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#004B93", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "dutch-bros":           { displayName: "Dutch Bros",             searchTerms: ["dutch bros", "dutch brothers"],               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#006098", brandFont: "'Nunito Sans', Futura, 'Trebuchet MS', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["dutch-bros"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "five-guys":            { displayName: "Five Guys",              searchTerms: ["five guys", "five guys burgers"],              hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D32F2F", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "freddys":              { displayName: "Freddy's",               searchTerms: ["freddy", "freddy's", "freddys"],              hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#003087", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "freddys":              { displayName: "Freddy's",               searchTerms: ["freddy", "freddy's", "freddys"],              hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D11839", brandFont: "'Montserrat', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["freddys"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "dairy-queen":          { displayName: "Dairy Queen",            searchTerms: ["dairy queen", "dq"],                          hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#CC0000", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "krispy-krunchy":       { displayName: "Krispy Krunchy",         searchTerms: ["krispy krunchy", "krispy"],                   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E31837", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "little-caesars":       { displayName: "Little Caesars",         searchTerms: ["little caesars", "little caesar"],            hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#0033A0", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "little-caesars":       { displayName: "Little Caesars",         searchTerms: ["little caesars", "little caesar"],            hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F25C12", brandFont: "'Barlow Semi Condensed', 'Open Sans', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["little-caesars"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "marcos-pizza":         { displayName: "Marco's Pizza",          searchTerms: ["marco", "marco's", "marcos pizza"],           hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#003087", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "whataburger":          { displayName: "Whataburger",            searchTerms: ["whataburger", "whata"],                       hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F3581D", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "whataburger":          { displayName: "Whataburger",            searchTerms: ["whataburger", "whata"],                       hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F17315", brandFont: "'Roboto Slab', 'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["whataburger"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "zaxbys":               { displayName: "Zaxby's",               searchTerms: ["zaxby", "zaxby's", "zaxbys"],                 hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E31837", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "brinker":              { displayName: "Brinker International",  searchTerms: ["brinker", "chilis", "chili's", "maggiano"],   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#C8102E", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "nothing-bundt-cakes":  { displayName: "Nothing Bundt Cakes",    searchTerms: ["nothing bundt", "bundt cakes", "nothing bundt cakes"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#9C3E97", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "white-castle":         { displayName: "White Castle",           searchTerms: ["white castle"],                               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#1460A8", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "nothing-bundt-cakes":  { displayName: "Nothing Bundt Cakes",    searchTerms: ["nothing bundt", "bundt cakes", "nothing bundt cakes"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#1C418E", brandFont: "'Montserrat', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["nothing-bundt-cakes"].screenshotHtml, confirmationBg: "#FFFFFF" } },
+  "white-castle":         { displayName: "White Castle",           searchTerms: ["white castle"],                               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#0063AF", brandFont: "'Roboto', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["white-castle"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "_default": {
     displayName: "Your Brand",
     searchTerms: [],
@@ -2012,8 +2043,8 @@ function renderBelowSheet() {
   el.innerHTML = `
     <p class="trusted-label">Trusted by the world's leading companies</p>
     <div class="logo-grid">
-      <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/dominos.png" alt="Domino's" width="836" height="176" loading="lazy" decoding="async" /></div></div>
-      <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/kfc.png" alt="KFC" width="586" height="180" loading="lazy" decoding="async" /></div></div>
+      <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/just-salad.png" alt="Just Salad" width="900" height="900" loading="lazy" decoding="async" /></div></div>
+      <div class="logo-tile logo-tile--kfc"><div class="logo-tile-media"><img src="assets/trusted-by/kfc.png" alt="KFC" width="586" height="180" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/inspire.png" alt="Inspire Brands" width="776" height="194" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/lowes.png" alt="Lowe's" width="692" height="390" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/target.png" alt="Target" width="770" height="202" loading="lazy" decoding="async" /></div></div>
@@ -2021,7 +2052,6 @@ function renderBelowSheet() {
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/wingstop.png" alt="Wingstop" width="796" height="448" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/pizza-hut.png" alt="Pizza Hut" width="662" height="226" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/sephora.png" alt="Sephora" width="768" height="432" loading="lazy" decoding="async" /></div></div>
-      <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/just-salad.png" alt="Just Salad" width="708" height="288" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/shake-shack.png" alt="Shake Shack" width="750" height="422" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/ticketmaster.png" alt="Ticketmaster" width="812" height="456" loading="lazy" decoding="async" /></div></div>
       <div class="logo-tile"><div class="logo-tile-media"><img src="assets/trusted-by/best-buy.png" alt="Best Buy" width="676" height="464" loading="lazy" decoding="async" /></div></div>
