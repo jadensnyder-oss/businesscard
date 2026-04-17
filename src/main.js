@@ -139,7 +139,7 @@ const DEMO_OFFERS = [
     description: "Sign up for a 1-year The Club Card Membership with BJ's Easy Renewal® for $15 — click below to unlock your offer!",
     benefits: null,
     heroSvg: null,
-    heroImage: "/assets/roktrlc-sheet/bjs.png",
+    heroImage: "/assets/roktrlc-sheet/bjs.svg",
     heroImageClass: "offer-hero--bjs",
     logoSvg: null,
     cta: "Claim now",
@@ -151,7 +151,7 @@ const DEMO_OFFERS = [
 const SHEET_HERO_INTRINSIC = {
   "/assets/roktrlc-sheet/sephora-uber-eats.png": [252, 252],
   "/assets/roktrlc-sheet/disney-plus.svg": [1041, 565],
-  "/assets/roktrlc-sheet/bjs.png": [1024, 823]
+  "/assets/roktrlc-sheet/bjs.svg": [58, 51]
 };
 
 // === STATE ===

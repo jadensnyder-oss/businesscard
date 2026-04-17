@@ -559,6 +559,10 @@
     .welcome-trusted-icon--svg {
       background: #f8f9fa;
     }
+    /* Slightly larger mark vs default 8px pad → 40px inner; 5px pad → 46px inner */
+    .welcome-trusted-icon--logo-lg {
+      padding: 5px;
+    }
     @keyframes welcomeReveal {
       from {
         opacity: 0;
