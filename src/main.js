@@ -480,6 +480,12 @@ function closeBottomSheet() {
 }
 
 function sheetCta() {
+  // First overlay (Sephora/Uber $50 voucher): primary CTA goes straight to the lead form.
+  if (state.currentOfferPosition === 1) {
+    closeBottomSheet();
+    showVoucherForm();
+    return;
+  }
   advanceOffer();
 }
 
