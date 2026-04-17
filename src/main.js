@@ -1563,6 +1563,10 @@ function submitVoucherForm(e) {
   }
   errorEl.style.display = 'none';
 
+  var txn = sliderToTransactions(state.sliderPos);
+  var annualRevenue = txn * 0.15;
+  var monthlyRevenue = annualRevenue / 12;
+
   var payload = {
     firstName: firstName,
     lastName: lastName,
@@ -1570,6 +1574,9 @@ function submitVoucherForm(e) {
     email: email,
     partner: partner,
     company: state.selectedClientKey !== '_default' ? getClient().displayName : '',
+    annualTransactions: txn,
+    annualRevenue: annualRevenue,
+    monthlyRevenue: monthlyRevenue,
     source: 'rokt-rlc-voucher',
     submittedAt: new Date().toISOString()
   };
