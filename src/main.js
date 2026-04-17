@@ -36,7 +36,7 @@ const CLIENT_ASSETS = {
   "zaxbys": {
     screenshotHtml: `<img src="/assets/zaxbys/confirmation.png" alt="" class="s4-phone-screenshot" width="502" height="1024" decoding="sync" fetchpriority="high">`,
   },
-  "panda-restaurant": {
+  "panda-express": {
     screenshotHtml: `<img src="/assets/panda-express/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
   },
   "churchs-chicken": {
@@ -87,17 +87,19 @@ const CLIENT_ASSETS = {
   "shake-shack": {
     screenshotHtml: `<img src="/assets/shake-shack/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
   },
+  "dairy-queen": {
+    screenshotHtml: `<img src="/assets/dairy-queen/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
 };
 
 // === CONFIG ===
 const CLIENTS = {
   "bloomin-brands":       { displayName: "Bloomin' Brands",       searchTerms: ["bloomin", "bloomin brands", "bloomin' brands"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#C8102E", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "inspire-brands":       { displayName: "Inspire Brands",        searchTerms: ["inspire", "inspire brands"],                   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E31837", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "panda-restaurant":     { displayName: "Panda Restaurant Group", searchTerms: ["panda restaurant"],                             hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E40022", brandFont: "Montserrat, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panda-restaurant"].screenshotHtml, confirmationBg: "#D4202A" } },
-  "panda-express":        { displayName: "Panda Express",           searchTerms: ["panda", "panda express"],                       hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E40022", brandFont: "Montserrat, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panda-restaurant"].screenshotHtml, confirmationBg: "#D4202A" } },
+  "panda-express":        { displayName: "Panda Express",           searchTerms: ["panda", "panda express", "panda restaurant"],  hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E40022", brandFont: "Montserrat, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panda-express"].screenshotHtml, confirmationBg: "#D4202A" } },
   "shake-shack":          { displayName: "Shake Shack",            searchTerms: ["shake shack", "shakeshack"],                   hasCustomDemo: true, annualTransactions: 50000000, confirmationPage: { brandColor: "#408116", brandFont: "'Barlow Semi Condensed', 'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["shake-shack"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "smoothie-king":        { displayName: "Smoothie King",          searchTerms: ["smoothie king", "smoothie"],                  hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#B5121B", brandFont: "'Roboto Condensed', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["smoothie-king"].screenshotHtml } },
-  "subway":               { displayName: "SUBWAY",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#008C2B", brandFont: "'Roboto', 'Barlow Condensed', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["subway"].screenshotHtml, confirmationBg: "#FFFFFF" } },
+  "subway":               { displayName: "Subway",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#008C2B", brandFont: "'Roboto', 'Barlow Condensed', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["subway"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "scooters-coffee":      { displayName: "Scooter's Coffee",       searchTerms: ["scooter", "scooters", "scooter's coffee"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F7941D", brandFont: "Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["scooters-coffee"].screenshotHtml } },
   "panera-bread":         { displayName: "Panera Bread",           searchTerms: ["panera", "panera bread"],                     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#1D4321", brandFont: "Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panera-bread"].screenshotHtml } },
   "el-pollo-loco":        { displayName: "El Pollo Loco",          searchTerms: ["el pollo", "el pollo loco", "pollo loco"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E1280F", brandFont: "'Roboto', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["el-pollo-loco"].screenshotHtml, confirmationBg: "#E7E7DF" } },
@@ -108,7 +110,7 @@ const CLIENTS = {
   "dutch-bros":           { displayName: "Dutch Bros",             searchTerms: ["dutch bros", "dutch brothers"],               hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#006098", brandFont: "'Nunito Sans', Futura, 'Trebuchet MS', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["dutch-bros"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "five-guys":            { displayName: "Five Guys",              searchTerms: ["five guys", "five guys burgers", "5 guys"],   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#C81633", brandFont: "'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["five-guys"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "freddys":              { displayName: "Freddy's",               searchTerms: ["freddy", "freddy's", "freddys"],              hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D11839", brandFont: "'Montserrat', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["freddys"].screenshotHtml, confirmationBg: "#FFFFFF" } },
-  "dairy-queen":          { displayName: "Dairy Queen",            searchTerms: ["dairy queen", "dq"],                          hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#CC0000", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "dairy-queen":          { displayName: "Dairy Queen",            searchTerms: ["dairy queen", "dq"],                          hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#004DE4", brandFont: "'Roboto', 'Barlow', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["dairy-queen"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "krispy-krunchy":       { displayName: "Krispy Krunchy",         searchTerms: ["krispy krunchy", "krispy"],                   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D92632", brandFont: "Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["krispy-krunchy"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "little-caesars":       { displayName: "Little Caesars",         searchTerms: ["little caesars", "little caesar"],            hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F25C12", brandFont: "'Barlow Semi Condensed', 'Open Sans', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["little-caesars"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "marcos-pizza":         { displayName: "Marco's Pizza",          searchTerms: ["marco", "marco's", "marcos pizza"],           hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#FBAE17", brandFont: "Futura, 'Trebuchet MS', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["marcos-pizza"].screenshotHtml, confirmationBg: "#F5F0EB" } },
@@ -143,7 +145,7 @@ const DEMO_OFFERS = [
     heroImage: "/assets/roktrlc-sheet/sephora-uber-eats.png",
     heroImageClass: null,
     logoSvg: null,
-    cta: "Claim now",
+    cta: "Claim Now",
     dismiss: "No thanks"
   },
   {
@@ -156,7 +158,7 @@ const DEMO_OFFERS = [
     heroImage: "/assets/roktrlc-sheet/disney-plus.svg",
     heroImageClass: "offer-hero--disney",
     logoSvg: null,
-    cta: "Claim now",
+    cta: "Claim Now",
     dismiss: "No thanks"
   },
   {
@@ -169,7 +171,7 @@ const DEMO_OFFERS = [
     heroImage: "/assets/roktrlc-sheet/bjs.svg",
     heroImageClass: "offer-hero--bjs",
     logoSvg: null,
-    cta: "Claim now",
+    cta: "Claim Now",
     dismiss: "No thanks"
   }
 ];
@@ -499,8 +501,7 @@ function zbSheetCta() {
 }
 
 function zbSheetDismiss() {
-  closeBottomSheet();
-  showVoucherForm();
+  zbSheetCta();
 }
 
 function sheetGoToPrevOffer() {
@@ -632,6 +633,8 @@ function renderSheet() {
   backdrop.classList.toggle('frd-figma-backdrop', isFreddys);
   const isShakeShack = state.selectedClientKey === 'shake-shack';
   backdrop.classList.toggle('shk-figma-backdrop', isShakeShack);
+  const isDairyQueen = state.selectedClientKey === 'dairy-queen';
+  backdrop.classList.toggle('dq-figma-backdrop', isDairyQueen);
 
   if (isSk) {
     sheet.classList.add('sk-figma');
@@ -641,7 +644,6 @@ function renderSheet() {
         <div class="sk-figma-top">
           <div class="sk-figma-order-block">
             <div class="sk-figma-confirmed">Your order is confirmed</div>
-            <div class="sk-figma-order-num">Order #: A12345</div>
           </div>
         </div>
         <div class="sk-figma-card">
@@ -675,7 +677,6 @@ function renderSheet() {
         <div class="sc-figma-top">
           <div class="sc-figma-order-block">
             <div class="sc-figma-confirmed">Your order is confirmed</div>
-            <div class="sc-figma-order-num">Order #: A12345</div>
           </div>
         </div>
         <div class="sc-figma-card">
@@ -706,7 +707,6 @@ function renderSheet() {
     <div class="pb-figma-panel">
       <div class="pb-figma-header">
         <div class="pb-figma-confirmed">Your order is confirmed</div>
-        <div class="pb-figma-order-num">Order #: A12345</div>
       </div>
       <div class="pb-figma-body">
         <div class="pb-figma-card">
@@ -730,18 +730,15 @@ function renderSheet() {
 
   if (isZb) {
     sheet.classList.add('zb-figma');
-    const isFirstOffer = pos === 1;
-    const isLastOffer = pos === DEMO_OFFERS.length;
-    const ctaOnclick = isFirstOffer ? 'onclick="zbSheetCta()"' : '';
-    const ctaLabel = isFirstOffer ? escapeHtml(offer.cta) : 'Example';
-    const dismissOnclick = isLastOffer ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const ctaOnclick = 'onclick="zbSheetCta()"';
+    const ctaLabel = escapeHtml(offer.cta);
+    const dismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="zb-sheet">
       <div class="zb-sheet__header">
         <div class="zb-sheet__order-block">
           <div class="zb-sheet__confirmed">Order confirmed!</div>
-          <div class="zb-sheet__order-num">Order #42979172875173890</div>
         </div>
         <button type="button" class="zb-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#071C3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -760,23 +757,20 @@ function renderSheet() {
     return;
   }
 
-  const isPe = state.selectedClientKey === 'panda-restaurant' || state.selectedClientKey === 'panda-express';
+  const isPe = state.selectedClientKey === 'panda-express';
   backdrop.classList.toggle('pe-figma-backdrop', isPe);
 
   if (isPe) {
     sheet.classList.add('pe-figma');
-    const peIsFirst = pos === 1;
-    const peIsLast = pos === DEMO_OFFERS.length;
-    const peCtaOnclick = peIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const peCtaLabel = peIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const peDismissOnclick = peIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const peCtaOnclick = 'onclick="zbSheetCta()"';
+    const peCtaLabel = escapeHtml(offer.cta);
+    const peDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="pe-sheet">
       <div class="pe-sheet__header">
         <div class="pe-sheet__order-block">
           <div class="pe-sheet__confirmed">Order confirmed!</div>
-          <div class="pe-sheet__order-num">Order #42979172875173890</div>
         </div>
         <button type="button" class="pe-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#2A2724" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -800,18 +794,15 @@ function renderSheet() {
 
   if (isCh) {
     sheet.classList.add('ch-figma');
-    const chIsFirst = pos === 1;
-    const chIsLast = pos === DEMO_OFFERS.length;
-    const chCtaOnclick = chIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const chCtaLabel = chIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const chDismissOnclick = chIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const chCtaOnclick = 'onclick="zbSheetCta()"';
+    const chCtaLabel = escapeHtml(offer.cta);
+    const chDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="ch-sheet">
       <div class="ch-sheet__header">
         <div class="ch-sheet__order-block">
           <div class="ch-sheet__confirmed">Order confirmed!</div>
-          <div class="ch-sheet__order-num">Order #4297538</div>
         </div>
         <button type="button" class="ch-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#2A2724" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -835,17 +826,14 @@ function renderSheet() {
 
   if (isDt) {
     sheet.classList.add('dt-figma');
-    const dtIsFirst = pos === 1;
-    const dtIsLast = pos === DEMO_OFFERS.length;
-    const dtCtaOnclick = dtIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const dtCtaLabel = dtIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const dtDismissOnclick = dtIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const dtCtaOnclick = 'onclick="zbSheetCta()"';
+    const dtCtaLabel = escapeHtml(offer.cta);
+    const dtDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="dt-sheet">
       <div class="dt-sheet__header">
         <div class="dt-sheet__order-block">
-          <div class="dt-sheet__order-num">Order #4297538</div>
           <div class="dt-sheet__confirmed">Order confirmed!</div>
         </div>
         <button type="button" class="dt-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
@@ -870,18 +858,15 @@ function renderSheet() {
 
   if (isJm) {
     sheet.classList.add('jm-figma');
-    const jmIsFirst = pos === 1;
-    const jmIsLast = pos === DEMO_OFFERS.length;
-    const jmCtaOnclick = jmIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const jmCtaLabel = jmIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const jmDismissOnclick = jmIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const jmCtaOnclick = 'onclick="zbSheetCta()"';
+    const jmCtaLabel = escapeHtml(offer.cta);
+    const jmDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="jm-sheet">
       <div class="jm-sheet__header">
         <div class="jm-sheet__order-block">
           <div class="jm-sheet__confirmed">Order confirmed!</div>
-          <div class="jm-sheet__order-num">Order #4297538</div>
         </div>
         <button type="button" class="jm-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#172554" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -905,18 +890,15 @@ function renderSheet() {
 
   if (isDhc) {
     sheet.classList.add('dhc-figma');
-    const dhcIsFirst = pos === 1;
-    const dhcIsLast = pos === DEMO_OFFERS.length;
-    const dhcCtaOnclick = dhcIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const dhcCtaLabel = dhcIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const dhcDismissOnclick = dhcIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const dhcCtaOnclick = 'onclick="zbSheetCta()"';
+    const dhcCtaLabel = escapeHtml(offer.cta);
+    const dhcDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="dhc-sheet">
       <div class="dhc-sheet__header">
         <div class="dhc-sheet__order-block">
           <div class="dhc-sheet__confirmed">ORDER CONFIRMED!</div>
-          <div class="dhc-sheet__order-num">Order #42975382029549577</div>
         </div>
         <button type="button" class="dhc-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -940,18 +922,15 @@ function renderSheet() {
 
   if (isMp) {
     sheet.classList.add('mp-figma');
-    const mpIsFirst = pos === 1;
-    const mpIsLast = pos === DEMO_OFFERS.length;
-    const mpCtaOnclick = mpIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const mpCtaLabel = mpIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const mpDismissOnclick = mpIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const mpCtaOnclick = 'onclick="zbSheetCta()"';
+    const mpCtaLabel = escapeHtml(offer.cta);
+    const mpDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="mp-sheet">
       <div class="mp-sheet__header">
         <div class="mp-sheet__order-block">
           <div class="mp-sheet__confirmed">Your order is confirmed</div>
-          <div class="mp-sheet__order-num">Order #: A12345</div>
         </div>
         <button type="button" class="mp-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -975,18 +954,15 @@ function renderSheet() {
 
   if (isKk) {
     sheet.classList.add('kk-figma');
-    const kkIsFirst = pos === 1;
-    const kkIsLast = pos === DEMO_OFFERS.length;
-    const kkCtaOnclick = kkIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const kkCtaLabel = kkIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const kkDismissOnclick = kkIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const kkCtaOnclick = 'onclick="zbSheetCta()"';
+    const kkCtaLabel = escapeHtml(offer.cta);
+    const kkDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="kk-sheet">
       <div class="kk-sheet__header">
         <div class="kk-sheet__order-block">
           <div class="kk-sheet__confirmed">Your order is confirmed</div>
-          <div class="kk-sheet__order-num">Order #: A12345</div>
         </div>
         <button type="button" class="kk-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#101828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1010,18 +986,15 @@ function renderSheet() {
 
   if (isFg) {
     sheet.classList.add('fg-figma');
-    const fgIsFirst = pos === 1;
-    const fgIsLast = pos === DEMO_OFFERS.length;
-    const fgCtaOnclick = fgIsFirst ? 'onclick="zbSheetCta()"' : '';
-    const fgCtaLabel = fgIsFirst ? escapeHtml(offer.cta) : 'Example';
-    const fgDismissOnclick = fgIsLast ? 'onclick="zbSheetDismiss()"' : 'onclick="sheetDismiss()"';
+    const fgCtaOnclick = 'onclick="zbSheetCta()"';
+    const fgCtaLabel = escapeHtml(offer.cta);
+    const fgDismissOnclick = 'onclick="sheetDismiss()"';
 
     sheet.innerHTML = `
     <div class="fg-sheet">
       <div class="fg-sheet__banner">
         <div class="fg-sheet__order-block">
           <div class="fg-sheet__confirmed">Your order is confirmed</div>
-          <div class="fg-sheet__order-num">order #: 605176084605713</div>
         </div>
         <button type="button" class="fg-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1042,6 +1015,43 @@ function renderSheet() {
     return;
   }
 
+  if (isDairyQueen) {
+    sheet.classList.add('dq-figma');
+    const dqDismissBtn = offer.dismiss
+      ? `<button type="button" class="dq-sheet__btn-secondary" onclick="sheetDismiss()"><span>${escapeHtml(offer.dismiss)}</span></button>`
+      : '';
+
+    sheet.innerHTML = `
+    <div class="dq-sheet">
+      <div class="dq-sheet__body">
+        <div class="dq-sheet__header-row">
+          <div class="dq-sheet__titles">
+            <div class="dq-sheet__thankyou">Thank You for Your Order!</div>
+          </div>
+          <button type="button" class="dq-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="dq-sheet__card">
+          <div class="dq-sheet__card-inner">
+            <div class="dq-sheet__offer-copy">
+              ${offerHtml}
+            </div>
+            <div class="dq-sheet__btns">
+              <button type="button" class="dq-sheet__btn-primary" onclick="sheetCta()"><span>${escapeHtml(offer.cta)}</span></button>
+              ${dqDismissBtn}
+            </div>
+          </div>
+        </div>
+        ${paginationHtml}
+      </div>
+      <div class="dq-sheet__footer">
+        <span class="dq-sheet__footer-muted">Powered by </span><a class="dq-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Rokt</a><span class="dq-sheet__footer-muted"> - </span><a class="dq-sheet__footer-link" href="Rokt-RLC-next.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      </div>
+    </div>`;
+    return;
+  }
+
   if (isSubway) {
     sheet.classList.add('sw-figma');
     const swDismissBtn = offer.dismiss
@@ -1054,7 +1064,6 @@ function renderSheet() {
         <div class="sw-sheet__header-row">
           <div class="sw-sheet__titles">
             <div class="sw-sheet__thankyou">Thank You for Your Order!</div>
-            <div class="sw-sheet__order-line">Order #057689917</div>
           </div>
           <button type="button" class="sw-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1092,7 +1101,6 @@ function renderSheet() {
         <div class="lc-sheet__header-row">
           <div class="lc-sheet__titles">
             <div class="lc-sheet__thankyou">Thank You For Your Order!</div>
-            <div class="lc-sheet__order-line">Order #057689917</div>
           </div>
           <button type="button" class="lc-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1130,7 +1138,6 @@ function renderSheet() {
         <div class="wb-sheet__header-row">
           <div class="wb-sheet__titles">
             <div class="wb-sheet__thankyou">Thank You For Your Order!</div>
-            <div class="wb-sheet__order-line">Order #057689917</div>
           </div>
           <button type="button" class="wb-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1168,7 +1175,6 @@ function renderSheet() {
         <div class="nbc-sheet__header-row">
           <div class="nbc-sheet__titles">
             <div class="nbc-sheet__thankyou">Thanks For Your Order!</div>
-            <div class="nbc-sheet__order-line">Order #057689917</div>
           </div>
           <button type="button" class="nbc-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1207,7 +1213,6 @@ function renderSheet() {
           <div class="wc-sheet__header-spacer" aria-hidden="true"></div>
           <div class="wc-sheet__titles">
             <div class="wc-sheet__thankyou">Thanks For Your Order!</div>
-            <div class="wc-sheet__order-line">Order #4297538</div>
           </div>
           <button type="button" class="wc-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1246,7 +1251,6 @@ function renderSheet() {
           <div class="db-sheet__header-spacer" aria-hidden="true"></div>
           <div class="db-sheet__titles">
             <div class="db-sheet__headline">Your Order is Confirmed</div>
-            <div class="db-sheet__order-line">Order #4297538</div>
           </div>
           <button type="button" class="db-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1285,7 +1289,6 @@ function renderSheet() {
           <div class="epl-sheet__header-spacer" aria-hidden="true"></div>
           <div class="epl-sheet__titles">
             <div class="epl-sheet__headline">Thanks for your order!</div>
-            <div class="epl-sheet__order-line">Order #4297538</div>
           </div>
           <button type="button" class="epl-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1322,7 +1325,6 @@ function renderSheet() {
       <div class="frd-sheet__body">
         <div class="frd-sheet__header-row">
           <div class="frd-sheet__titles">
-            <div class="frd-sheet__order-line">Order #4297538</div>
             <div class="frd-sheet__headline">Order confirmed!</div>
           </div>
           <button type="button" class="frd-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
@@ -1361,7 +1363,6 @@ function renderSheet() {
         <div class="shk-sheet__header-row">
           <div class="shk-sheet__titles">
             <div class="shk-sheet__headline">Thank You for Your Order!</div>
-            <div class="shk-sheet__order-line">Order #057689917</div>
           </div>
           <button type="button" class="shk-sheet__close" onclick="zbSheetDismiss()" aria-label="Close">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1408,6 +1409,7 @@ function renderSheet() {
   backdrop.classList.remove('epl-figma-backdrop');
   backdrop.classList.remove('frd-figma-backdrop');
   backdrop.classList.remove('shk-figma-backdrop');
+  backdrop.classList.remove('dq-figma-backdrop');
   sheet.classList.remove('sk-figma');
   sheet.classList.remove('sc-figma');
   sheet.classList.remove('pb-figma');
@@ -1429,12 +1431,12 @@ function renderSheet() {
   sheet.classList.remove('epl-figma');
   sheet.classList.remove('frd-figma');
   sheet.classList.remove('shk-figma');
+  sheet.classList.remove('dq-figma');
 
   // All interpolated values are from static DEMO_OFFERS config — not user input.
   sheet.innerHTML = `
     <div class="sheet-header">
       <div class="sheet-confirmed">Your order is confirmed</div>
-      <div class="sheet-order-num">Order #: A12345</div>
     </div>
 
     <div class="sheet-offer">${offerHtml}</div>
@@ -1489,7 +1491,6 @@ function renderConfirmationPage() {
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="${safeColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <div class="s4-order-title">Order Confirmed</div>
-      <div class="s4-order-number">Order #A12345</div>
     `;
   }
 

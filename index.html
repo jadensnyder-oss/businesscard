@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -53,21 +53,21 @@
       </div>
       <section class="welcome-trusted" aria-label="Trusted brands">
         <p class="welcome-trusted-heading">Trusted by the world's largest brands</p>
-        <ul class="welcome-trusted-logos">
+        <ul class="welcome-trusted-logos welcome-trusted-logos--five">
           <li class="welcome-trusted-item">
-            <div class="welcome-trusted-icon welcome-trusted-icon--logo-lg"><img src="/assets/trusted-by/just-salad.png" alt="Just Salad" width="64" height="64" loading="lazy" decoding="async"></div>
+            <div class="welcome-trusted-icon"><img src="/assets/trusted-by/dunkin.png" alt="Dunkin'" width="80" height="80" loading="lazy" decoding="async"></div>
           </li>
           <li class="welcome-trusted-item">
-            <div class="welcome-trusted-icon"><img src="/assets/trusted-by/dunkin.png" alt="Dunkin'" width="64" height="64" loading="lazy" decoding="async"></div>
+            <div class="welcome-trusted-icon"><img src="/assets/trusted-by/pizza-hut.png" alt="Pizza Hut" width="80" height="80" loading="lazy" decoding="async"></div>
           </li>
           <li class="welcome-trusted-item">
-            <div class="welcome-trusted-icon"><img src="/assets/trusted-by/shake-shack.png" alt="Shake Shack" width="64" height="64" loading="lazy" decoding="async"></div>
+            <div class="welcome-trusted-icon"><img src="/assets/trusted-by/shake-shack.png" alt="Shake Shack" width="80" height="80" loading="lazy" decoding="async"></div>
           </li>
           <li class="welcome-trusted-item">
-            <div class="welcome-trusted-icon"><img src="/assets/trusted-by/pizza-hut.png" alt="Pizza Hut" width="64" height="64" loading="lazy" decoding="async"></div>
+            <div class="welcome-trusted-icon welcome-trusted-icon--svg welcome-trusted-icon--logo-lg welcome-trusted-icon--kfc"><img src="/assets/trusted-by/kfc.svg" alt="KFC" width="80" height="80" loading="lazy" decoding="async"></div>
           </li>
           <li class="welcome-trusted-item">
-            <div class="welcome-trusted-icon welcome-trusted-icon--svg welcome-trusted-icon--logo-lg welcome-trusted-icon--kfc"><img src="/assets/trusted-by/kfc.svg" alt="KFC" width="64" height="64" loading="lazy" decoding="async"></div>
+            <div class="welcome-trusted-icon welcome-trusted-icon--logo-lg"><img src="/assets/trusted-by/just-salad.png" alt="Just Salad" width="80" height="80" loading="lazy" decoding="async"></div>
           </li>
         </ul>
       </section>
@@ -88,7 +88,7 @@
   <div class="iphone-scroll">
     <div class="iphone-scroll-body">
       <div class="flow-progress" role="status" aria-label="Step 1 of 3"><span class="flow-progress-track"><span class="flow-progress-fill" style="width:33.33%"></span></span><span class="flow-progress-label">Step 1 of 3</span></div>
-      <h1 class="s1-headline">How much profit<br>is hiding in<br>plain sight?</h1>
+      <h1 class="s1-headline">How much profit is hiding in<br>plain sight?</h1>
       <p class="s1-sub">Your checkout flow generates millions of high-intent moments every year. We'll show you exactly how much revenue you're leaving on the table.</p>
     </div>
   </div>
@@ -126,6 +126,15 @@
   <div class="iphone-scroll">
     <div class="iphone-scroll-body">
       <div class="flow-progress" role="status" aria-label="Step 3 of 3"><span class="flow-progress-track"><span class="flow-progress-fill" style="width:100%"></span></span><span class="flow-progress-label">Step 3 of 3</span></div>
+      <div class="iphone-slider-dock iphone-slider-dock--in-flow">
+        <div class="calc-slider-group">
+          <div class="calc-slider-label">
+            <span>Annual digital transactions</span>
+            <span id="slider-display">6,000,000</span>
+          </div>
+          <input type="range" id="txn-slider" min="0" max="100" value="50" oninput="onSlider(this.value)">
+        </div>
+      </div>
       <!-- Big number card -->
       <div class="calc-card" id="calc-card">
         <div class="calc-card-label" id="calc-card-label">ANNUAL PROFIT POTENTIAL</div>
@@ -140,15 +149,6 @@
     </div>
   </div>
   <div class="iphone-bottom-panel">
-    <div class="iphone-slider-dock">
-      <div class="calc-slider-group">
-        <div class="calc-slider-label">
-          <span>Annual digital transactions</span>
-          <span id="slider-display">6,000,000</span>
-        </div>
-        <input type="range" id="txn-slider" min="0" max="100" value="50" oninput="onSlider(this.value)">
-      </div>
-    </div>
     <div class="iphone-action-bar">
       <button type="button" class="btn btn-beetroot" id="btn-see-action" onclick="goToDemo()">See Rokt in Action →</button>
       <button type="button" class="btn btn-tertiary" onclick="goBack('screen-2')">Back</button>

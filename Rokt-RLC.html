@@ -156,6 +156,17 @@
     .iphone-slider-dock {
       padding: 14px max(20px, var(--sal)) 10px max(20px, var(--sar));
     }
+    #screen-3 .iphone-slider-dock--in-flow {
+      align-self: stretch;
+      width: 100%;
+      max-width: var(--app-max-width);
+      margin-top: 4px;
+      margin-bottom: 18px;
+      padding-top: 10px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--gray-600);
+      box-sizing: border-box;
+    }
     .iphone-slider-dock .calc-slider-group { margin-bottom: 0; }
     .iphone-slider-dock .calc-slider-label {
       flex-direction: column;
@@ -1102,6 +1113,7 @@
       vertical-align: top;
       flex-shrink: 0;
       image-rendering: auto;
+      clip-path: inset(4.5% 0 0 0);
     }
     .s4-check-circle {
       width: 56px;
@@ -1316,6 +1328,15 @@
   <div class="iphone-scroll">
     <div class="iphone-scroll-body">
       <div class="flow-progress" role="status" aria-label="Step 3 of 3"><span class="flow-progress-track"><span class="flow-progress-fill" style="width:100%"></span></span><span class="flow-progress-label">Step 3 of 3</span></div>
+      <div class="iphone-slider-dock iphone-slider-dock--in-flow">
+        <div class="calc-slider-group">
+          <div class="calc-slider-label">
+            <span>Annual digital transactions</span>
+            <span id="slider-display">6,000,000</span>
+          </div>
+          <input type="range" id="txn-slider" min="0" max="100" value="50" oninput="onSlider(this.value)">
+        </div>
+      </div>
       <!-- Big number card -->
       <div class="calc-card" id="calc-card">
         <div class="calc-card-label" id="calc-card-label">ANNUAL PROFIT POTENTIAL</div>
@@ -1330,15 +1351,6 @@
     </div>
   </div>
   <div class="iphone-bottom-panel">
-    <div class="iphone-slider-dock">
-      <div class="calc-slider-group">
-        <div class="calc-slider-label">
-          <span>Annual digital transactions</span>
-          <span id="slider-display">6,000,000</span>
-        </div>
-        <input type="range" id="txn-slider" min="0" max="100" value="50" oninput="onSlider(this.value)">
-      </div>
-    </div>
     <div class="iphone-action-bar">
       <button type="button" class="btn btn-beetroot" id="btn-see-action" onclick="goToDemo()">See Rokt in Action →</button>
       <button type="button" class="btn btn-tertiary" onclick="goBack('screen-2')">Back</button>
@@ -1413,16 +1425,19 @@ const CLIENT_ASSETS = {
   "shake-shack": {
     screenshotHtml: `<img src="assets/shake-shack/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
   },
+  "panda-express": {
+    screenshotHtml: `<img src="assets/panda-express/confirmation.png" alt="" class="s4-phone-screenshot" width="472" height="1024" decoding="sync" fetchpriority="high">`,
+  },
 };
 
 // === CONFIG ===
 const CLIENTS = {
   "bloomin-brands":       { displayName: "Bloomin' Brands",       searchTerms: ["bloomin", "bloomin brands", "bloomin' brands"], hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#C8102E", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "inspire-brands":       { displayName: "Inspire Brands",        searchTerms: ["inspire", "inspire brands"],                   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E31837", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
-  "panda-restaurant":     { displayName: "Panda Restaurant Group", searchTerms: ["panda", "panda restaurant", "panda express"],  hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D4202A", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
+  "panda-express":        { displayName: "Panda Express",           searchTerms: ["panda", "panda express", "panda restaurant"],   hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#D4202A", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["panda-express"].screenshotHtml, confirmationBg: "#D4202A" } },
   "shake-shack":          { displayName: "Shake Shack",            searchTerms: ["shake shack", "shakeshack"],                   hasCustomDemo: true, annualTransactions: 50000000, confirmationPage: { brandColor: "#408116", brandFont: "'Barlow Semi Condensed', 'Open Sans', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["shake-shack"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "smoothie-king":        { displayName: "Smoothie King",          searchTerms: ["smoothie king", "smoothie"],                  hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#B5121B", brandFont: "'Roboto Condensed', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["smoothie-king"].screenshotHtml } },
-  "subway":               { displayName: "SUBWAY",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#008C2B", brandFont: "'Roboto', 'Barlow Condensed', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["subway"].screenshotHtml, confirmationBg: "#FFFFFF" } },
+  "subway":               { displayName: "Subway",                 searchTerms: ["subway"],                                      hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#008C2B", brandFont: "'Roboto', 'Barlow Condensed', Inter, sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["subway"].screenshotHtml, confirmationBg: "#FFFFFF" } },
   "scooters-coffee":      { displayName: "Scooter's Coffee",       searchTerms: ["scooter", "scooters", "scooter's coffee"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#F7941D", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
   "el-pollo-loco":        { displayName: "El Pollo Loco",          searchTerms: ["el pollo", "el pollo loco", "pollo loco"],     hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#E1280F", brandFont: "'Roboto', sans-serif", logoUrl: null, orderConfirmationHtml: CLIENT_ASSETS["el-pollo-loco"].screenshotHtml, confirmationBg: "#E7E7DF" } },
   "jersey-mikes":         { displayName: "Jersey Mike's",          searchTerms: ["jersey mike", "jersey mike's", "jersey mikes"],hasCustomDemo: true, annualTransactions: null, confirmationPage: { brandColor: "#CC0000", brandFont: "Arial, sans-serif", logoUrl: null, orderConfirmationHtml: null } },
@@ -1467,7 +1482,7 @@ const DEMO_OFFERS = [
     heroImage: "assets/roktrlc-sheet/sephora-uber-eats.png",
     heroImageClass: null,
     logoSvg: null,
-    cta: "Claim now",
+    cta: "Claim Now",
     dismiss: null
   },
   {
@@ -1480,7 +1495,7 @@ const DEMO_OFFERS = [
     heroImage: "assets/roktrlc-sheet/disney-hulu.png",
     heroImageClass: "offer-hero--hulu-crop",
     logoSvg: null,
-    cta: "Claim now",
+    cta: "Claim Now",
     dismiss: "Decline"
   },
   {
@@ -1493,7 +1508,7 @@ const DEMO_OFFERS = [
     heroImage: "assets/roktrlc-sheet/bjs.svg",
     heroImageClass: null,
     logoSvg: null,
-    cta: "Claim now",
+    cta: "Claim Now",
     dismiss: "Decline"
   }
 ];
@@ -1986,7 +2001,6 @@ function renderSheet() {
           </div>
           <div class="sk-figma-order-block">
             <div class="sk-figma-confirmed">Your order is confirmed</div>
-            <div class="sk-figma-order-num">Order #: A12345</div>
           </div>
         </div>
         <div class="sk-figma-card">
@@ -2018,7 +2032,6 @@ function renderSheet() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <div class="sheet-confirmed">Your order is confirmed</div>
-      <div class="sheet-order-num">Order #: A12345</div>
     </div>
 
     <div class="sheet-offer">${offerHtml}</div>
@@ -2105,7 +2118,6 @@ function renderConfirmationPage() {
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="${safeColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <div class="s4-order-title">Order Confirmed</div>
-      <div class="s4-order-number">Order #A12345</div>
     `;
   }
 
