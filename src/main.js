@@ -191,6 +191,114 @@ let state = {
   lastAnnualForAnim: null
 };
 
+// === ANALYTICS / FUNNEL TRACKING ===
+// Posts events to the same n8n webhook as the lead form. n8n routes by `eventType`:
+//   - eventType: 'lead'  → existing Leads sheet (voucher form submissions)
+//   - eventType: 'event' → Events sheet (analytics: step views, hesitations, etc.)
+const TRACK_WEBHOOK = 'https://n8n.eng.roktinternal.com/webhook/7c2ceb82-45f6-4013-9ba4-fed1046e3170';
+
+const trackState = {
+  currentStep: '',
+  stepEnteredAt: 0,
+  sliderDebounceId: null,
+  voucherFieldsBound: false,
+  sessionEndSent: false,
+  submitOutcome: 'none', // 'none' | 'success' | 'error' | 'validation_fail'
+  lastSliderTxn: null,
+};
+
+function trackSessionId() {
+  try {
+    let id = sessionStorage.getItem('rlc_session_id');
+    if (!id) {
+      id = 'sess_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+      sessionStorage.setItem('rlc_session_id', id);
+      sessionStorage.setItem('rlc_session_start_ms', String(Date.now()));
+    }
+    return id;
+  } catch (e) {
+    return 'sess_anon_' + Date.now().toString(36);
+  }
+}
+
+function trackSessionStartMs() {
+  try {
+    const s = sessionStorage.getItem('rlc_session_start_ms');
+    return s ? parseInt(s, 10) : Date.now();
+  } catch (e) { return Date.now(); }
+}
+
+function track(eventName, props) {
+  const now = Date.now();
+  const payload = Object.assign({
+    eventType: 'event',
+    eventName: eventName,
+    sessionId: trackSessionId(),
+    step: trackState.currentStep || '',
+    timeOnStepMs: trackState.stepEnteredAt ? (now - trackState.stepEnteredAt) : 0,
+    sessionDurationMs: now - trackSessionStartMs(),
+    clientKey: (typeof state !== 'undefined' && state.selectedClientKey) || '',
+    timestamp: new Date(now).toISOString(),
+    pageUrl: location.href,
+    referrer: document.referrer || '',
+    userAgent: navigator.userAgent || '',
+  }, props || {});
+
+  try {
+    fetch(TRACK_WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true,
+    }).catch(function () { /* swallow */ });
+  } catch (e) { /* swallow */ }
+}
+
+function trackSessionStartOnce() {
+  try {
+    if (sessionStorage.getItem('rlc_session_started') === '1') return;
+    sessionStorage.setItem('rlc_session_started', '1');
+  } catch (e) {}
+  track('session_start');
+}
+
+function trackSliderDebounced(txn) {
+  trackState.lastSliderTxn = txn;
+  if (trackState.sliderDebounceId) clearTimeout(trackState.sliderDebounceId);
+  trackState.sliderDebounceId = setTimeout(function () {
+    track('slider_set', { transactions: txn });
+  }, 400);
+}
+
+function setupVoucherFieldTracking() {
+  if (trackState.voucherFieldsBound) return;
+  const fields = ['voucher-first', 'voucher-last', 'voucher-email', 'voucher-partner'];
+  let boundCount = 0;
+  fields.forEach(function (id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('blur', function () {
+      const v = (el.value || '').trim();
+      track('field_blur', {
+        fieldName: id.replace('voucher-', ''),
+        fieldFilled: v.length > 0,
+      });
+    });
+    boundCount++;
+  });
+  if (boundCount === fields.length) trackState.voucherFieldsBound = true;
+}
+
+window.addEventListener('pagehide', function () {
+  if (trackState.sessionEndSent) return;
+  trackState.sessionEndSent = true;
+  track('session_end', {
+    completed: trackState.submitOutcome === 'success',
+    submitOutcome: trackState.submitOutcome,
+    lastStep: trackState.currentStep || '',
+  });
+});
+
 let annualAnimId = 0;
 
 function getClient() { return CLIENTS[state.selectedClientKey] || CLIENTS["_default"]; }
@@ -406,6 +514,7 @@ function onSlider(val) {
   state.sliderPos = parseInt(val, 10);
   setSliderFillPct(state.sliderPos);
   updateCalc();
+  trackSliderDebounced(sliderToTransactions(state.sliderPos));
 }
 
 function animateAnnualDisplay(el, targetAnnual) {
@@ -479,6 +588,7 @@ function closeBottomSheet() {
 }
 
 function sheetCta() {
+  track('offer_action', { action: 'accept', offerPosition: state.currentOfferPosition });
   // First overlay (Sephora/Uber $50 voucher): primary CTA goes straight to the lead form.
   if (state.currentOfferPosition === 1) {
     closeBottomSheet();
@@ -489,22 +599,27 @@ function sheetCta() {
 }
 
 function sheetDismiss() {
+  track('offer_action', { action: 'dismiss', offerPosition: state.currentOfferPosition });
   advanceOffer();
 }
 
 function zbSheetCta() {
+  track('offer_action', { action: 'accept', offerPosition: state.currentOfferPosition, variant: 'zb' });
   closeBottomSheet();
   showVoucherForm();
 }
 
 function zbSheetDismiss() {
-  zbSheetCta();
+  track('offer_action', { action: 'dismiss', offerPosition: state.currentOfferPosition, variant: 'zb' });
+  closeBottomSheet();
+  showVoucherForm();
 }
 
 function sheetGoToPrevOffer() {
   if (state.currentOfferPosition > 1) {
     state.currentOfferPosition--;
     renderSheet();
+    track('offer_action', { action: 'prev', offerPosition: state.currentOfferPosition });
   }
 }
 
@@ -512,6 +627,7 @@ function sheetGoToNextOffer() {
   if (state.currentOfferPosition < DEMO_OFFERS.length) {
     state.currentOfferPosition++;
     renderSheet();
+    track('offer_action', { action: 'next', offerPosition: state.currentOfferPosition });
   }
 }
 
@@ -1505,6 +1621,11 @@ function goTo(id) {
     if (scrollEl) scrollEl.scrollTop = 0;
     window.scrollTo(0, 0);
   }
+  if (trackState.currentStep !== id) {
+    trackState.currentStep = id;
+    trackState.stepEnteredAt = Date.now();
+    track('step_view', { stepId: id });
+  }
 }
 
 function goBack(id) {
@@ -1536,6 +1657,9 @@ function showVoucherForm() {
   document.getElementById('voucher-success').style.display = 'none';
   document.getElementById('voucher-error').style.display = 'none';
   s4.scrollTop = 0;
+
+  setupVoucherFieldTracking();
+  track('voucher_form_shown');
 }
 
 function submitVoucherForm(e) {
@@ -1557,6 +1681,8 @@ function submitVoucherForm(e) {
   if (missing.length) {
     errorEl.textContent = 'Please provide ' + missing.join(', ') + '.';
     errorEl.style.display = '';
+    trackState.submitOutcome = 'validation_fail';
+    track('submit_validation_fail', { missingFields: missing.join(',') , sessionId: trackSessionId() });
     return;
   }
   errorEl.style.display = 'none';
@@ -1566,6 +1692,8 @@ function submitVoucherForm(e) {
   var monthlyRevenue = annualRevenue / 12;
 
   var payload = {
+    eventType: 'lead',
+    sessionId: trackSessionId(),
     firstName: firstName,
     lastName: lastName,
     fullName: firstName + ' ' + lastName,
@@ -1583,8 +1711,18 @@ function submitVoucherForm(e) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
+  }).then(function (r) {
+    if (r && r.ok) {
+      trackState.submitOutcome = 'success';
+      track('submit_success', { partner: partner, transactions: txn });
+    } else {
+      trackState.submitOutcome = 'error';
+      track('submit_error', { httpStatus: (r && r.status) || 0 });
+    }
   }).catch(function () {
     console.log('[voucher-lead]', payload);
+    trackState.submitOutcome = 'error';
+    track('submit_error', { httpStatus: 0, networkError: true });
   });
 
   // Show success immediately (don't block on API)
@@ -1621,3 +1759,5 @@ Object.assign(window, {
   submitVoucherForm,
   restartDemo,
 });
+
+trackSessionStartOnce();
